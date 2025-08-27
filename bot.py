@@ -4,7 +4,8 @@ from discord import app_commands
 import random, aiohttp, asyncio
 
 # ---------------- CONFIG ----------------
-TOKEN = "MTQxMDI4NTE0NDgxNTgyOTEzNQ.GPDzzZ.Ys6S1pSrJ_1klG-eOBP5pZeoZSnyrkKhJUDNdM"          # Replace with your bot token
+import os
+TOKEN = os.environ['TOKEN']
 GUILD_ID = 1404209672130396221     # Replace with your server ID
 
 
