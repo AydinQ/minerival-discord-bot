@@ -90,8 +90,7 @@ async def trivia(interaction: discord.Interaction):
             await interaction.response.send_message(f"❓ {q}")
 
 # ---------------- INFO COMMANDS ----------------
-@tree.command(name="userinfo", description="Show Discord info about a user", guild=discord.Object(id=GUILD_ID)
-@app_commands.checks.has_permissions(administrator=True))
+@tree.command(name="userinfo", description="Show Discord info about a user", guild=discord.Object(id=GUILD_ID))
 async def userinfo(interaction: discord.Interaction, member: discord.Member):
     embed = discord.Embed(title=f"User Info - {member}", color=discord.Color.blue())
     embed.add_field(name="ID", value=member.id)
@@ -100,7 +99,6 @@ async def userinfo(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.send_message(embed=embed)
 
 @tree.command(name="serverinfo", description="Show server info", guild=discord.Object(id=GUILD_ID))
-@app_commands.checks.has_permissions(administrator=True)
 async def serverinfo(interaction: discord.Interaction):
     guild = interaction.guild
     embed = discord.Embed(title=f"Server Info - {guild.name}")
@@ -110,7 +108,6 @@ async def serverinfo(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 @tree.command(name="avatar", description="Show user avatar", guild=discord.Object(id=GUILD_ID))
-@app_commands.checks.has_permissions(administrator=True)
 async def avatar(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.send_message(member.avatar)
 
